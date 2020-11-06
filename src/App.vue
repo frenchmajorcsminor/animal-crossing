@@ -3,7 +3,7 @@
   <div id="menu">
     <div id="brand">
       <router-link to="/">
-        <img src="/images/logo.png">
+        <img src="../images/dd98bnh-cdaa0e7e-c5f1-45f9-99fb-5a22d3c2974b.png">
       </router-link>
     </div>
     <div id="side">
@@ -15,14 +15,13 @@
       </router-link>
       <router-link to="/cart">
         <div class="menu-item">
-          <img src="/images/love.png">
-          <p>{{getCart}} items</p>
+          <img src="../images/Screen Shot 2020-11-06 at 14.37.35.png">
         </div>
       </router-link>
     </div>
   </div>
   <router-view />
-  <p class="footer"> <a href="https://github.com/BYU-CS-260-Winter-2020/lab-3b-grocery-store-frenchmajorcsminor">
+  <p class="footer"> <a href="https://github.com/frenchmajorcsminor/animal-crossing" target="_blank">
   My Github Repo
   </a>
   </p>
@@ -47,7 +46,7 @@ export default {
 
 body {
   margin: 50px 100px;
-
+  background-color: #FFF8DC;
 }
 
 #menu {
@@ -59,7 +58,7 @@ body {
 }
 
 #menu a {
-  color: #B84901;
+  color: #008B8B;
 }
 
 #brand {
@@ -76,10 +75,12 @@ body {
   grid-area: side;
   display: flex;
   justify-content: flex-end;
+  text-align: center;
 }
 
 #side img {
-  width: 50px;
+  border-radius: 25px;
+  width: 150px;
 }
 
 .footer {

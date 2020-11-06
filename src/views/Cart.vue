@@ -1,7 +1,7 @@
 <template>
 <div class="productPage">
 <div class="title">
-<h1>Your Cart</h1>
+<h1>Your Village</h1>
 <div class="wrapper">
   <div class="products" v-if="cart.length > 0">
     <div class="product" v-for="product in cart" :key="product.id">
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class="empty" v-else> <p> Your cart is empty</p></div>
+  <div class="empty" v-else> <p> Your village has no residents :(</p></div>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@ export default {
   font-family: "Lucida Console", Courier, monospace;
 }
 .info {
-  background: #F2921D;
+  background: #CD5C5C;
   color: #000;
   padding: 10px 30px;
   height: 80px;
@@ -107,6 +107,7 @@ export default {
 
 .info h1 {
   font-size: 16px;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 .info h2 {

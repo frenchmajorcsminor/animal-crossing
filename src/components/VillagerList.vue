@@ -8,18 +8,30 @@
         <p>Personality: {{current.personality}}</p>
         <p>Species: {{current.species}}</p>
         <p>B-day: {{current.birthday}}</p>
-        <p>Catch-phrase: {{current.catchphrase}}</p>
+        <p>Catch-phrase: <q>{{current.catchphrase}}</q></p>
         <p>Hobby: {{current.hobby}}</p>
       </div>
       <div class="image">
-        <img :src="current.image">
+        <img :src="current.image" decoding="async" />
       </div>
+      <div class="firstOptions">
       <div class="price">
-        <button @click="addToCart(current)" class="auto">Add to Cart</button>
+        <button @click="previousVillager" class="auto">Previous Villager</button>
       </div>
-      <div class="price">
-        <button @click="nextVillager" class="auto">Next Villager</button>
+        <div class="price">
+          <button @click="nextVillager" class="auto">Next Villager</button>
+        </div>
       </div>
+      <div class="secondOptions">
+
+        <div class="price">
+          <button @click="addToCart(current)" class="auto">Invite to village</button>
+        </div>
+        <div class="price">
+          <button @click="randomVillager" class="auto">Surprise Villager</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -51,14 +63,14 @@ export default {
     this.villager();
   },
   methods: {
-    villager() {
+    async villager() {
       this.current = this.villagerData[0];
     },
     addToCart(product) {
       this.$root.$data.cart.push(product);
     },
     nextVillager() {
-      if (this.current.id != this.villagerData.length - 1)
+      if (this.current.id != this.villagerData.length)
       {
         this.current = this.villagerData[this.current.id];
       }
@@ -66,8 +78,23 @@ export default {
         this.current = this.villagerData[0];
       }
     },
+    getRandom(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum and minimum are inclusive
+    },
     previousVillager() {
-
+    if (this.current.id > 1)
+    {
+      this.current = this.villagerData[this.current.id - 2];
+      }
+    else
+    {
+      this.current = this.villagerData[this.villagerData.length - 1];
+    }
+    },
+    randomVillager() {
+      this.current = this.villagerData[this.getRandom(1, this.villagerData.length)];
     }
   }
 }
@@ -111,7 +138,7 @@ export default {
 }
 
 .info {
-  background: #F2921D;
+  background: #CD5C5C;
   color: #000;
   padding: 10px 30px;
   height: 200px;
@@ -138,9 +165,17 @@ export default {
 
 button {
   height: 50px;
+  width: 120px;
   background: #000;
   color: white;
+  margin: 10px;
   border: none;
+}
+.firstOptions {
+  display: flex;
+}
+.secondOptions {
+  display: flex;
 }
 
 .auto {

@@ -1,7 +1,7 @@
 let villagers = [{
     id: "1",
     name: "Admiral",
-    image: 'https://static.wikia.nocookie.net/animalcrossing/images/5/52/NH-Admiral_poster.png/revision/latest?cb=20200522013249',
+    image: "https://static.wikia.nocookie.net/animalcrossing/images/5/52/NH-Admiral_poster.png/revision/latest/scale-to-width-down/256?cb=20200522013249",
     gender: "Male",
     personality: "Cranky",
     species: "Bird",
