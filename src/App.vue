@@ -7,10 +7,9 @@
       </router-link>
     </div>
     <div id="side">
-      <router-link to="/browse">
-        <div class="menu-item browse">
-          <img src="/images/globe.png">
-          <p>Browse</p>
+      <router-link to="/about">
+        <div class="menu-item">
+          <img src="../images/about.svg">
         </div>
       </router-link>
       <router-link to="/cart">
@@ -92,6 +91,8 @@ body {
 .menu-item {
   display: flex;
   flex-direction: column;
+  height: 100px;
+  margin: 10px;
 }
 
 .menu-item p {
@@ -101,4 +102,5 @@ body {
 .browse {
   margin-right: 50px;
 }
+
 </style>

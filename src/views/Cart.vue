@@ -7,16 +7,12 @@
     <div class="product" v-for="product in cart" :key="product.id">
       <div class="info">
         <h1>{{product.name}}</h1>
-        <p>{{product.country}}</p>
       </div>
       <div class="image">
         <img :src="product.image">
       </div>
       <div class="price">
-        <h2>{{product.price}}</h2>
-      </div>
-      <div class="price">
-      <button @click="removeFromCart(product)">Remove from Cart</button>
+        <button @click="removeFromCart(product)">Remove from Village</button>
       </div>
     </div>
   </div>

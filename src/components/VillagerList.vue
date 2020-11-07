@@ -70,8 +70,7 @@ export default {
       this.$root.$data.cart.push(product);
     },
     nextVillager() {
-      if (this.current.id != this.villagerData.length)
-      {
+      if (this.current.id != this.villagerData.length) {
         this.current = this.villagerData[this.current.id];
       }
       else {
