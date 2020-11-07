@@ -4,15 +4,15 @@
 <h1>Your Village</h1>
 <div class="wrapper">
   <div class="products" v-if="cart.length > 0">
-    <div class="product" v-for="product in cart" :key="product.id">
+    <div class="product" v-for="person in cart" :key="person.id">
       <div class="info">
-        <h1>{{product.name}}</h1>
+        <h1>{{person.name}}</h1>
       </div>
       <div class="image">
-        <img :src="product.image">
+        <img :src="require('../../images/'+person.key)" width="250" height="250"/>
       </div>
       <div class="price">
-        <button @click="removeFromCart(product)">Remove from Village</button>
+        <button @click="removeFromVillage(person)">Remove from Village</button>
       </div>
     </div>
   </div>
@@ -40,9 +40,9 @@ export default {
     }
   },
   methods: {
-    removeFromCart(product) {
+    removeFromVillage(villager) {
       for (let i = 0; i < this.$root.$data.cart.length; i++) {
-        if (this.$root.$data.cart[i].id == product.id)
+        if (this.$root.$data.cart[i].id == villager.id)
         {
           this.$root.$data.cart.splice(i, 1);
           return;

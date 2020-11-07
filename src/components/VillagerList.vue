@@ -4,15 +4,15 @@
     <div class="product">
       <div class="info">
         <h1>{{current.name}}</h1>
-        <p>Gender: {{current.gender}}</p>
-        <p>Personality: {{current.personality}}</p>
-        <p>Species: {{current.species}}</p>
-        <p>B-day: {{current.birthday}}</p>
-        <p>Catch-phrase: <q>{{current.catchphrase}}</q></p>
-        <p>Hobby: {{current.hobby}}</p>
+        <p><strong>Gender:</strong> {{current.gender}}</p>
+        <p><strong>Personality:</strong> {{current.personality}}</p>
+        <p><strong>Species:</strong> {{current.species}}</p>
+        <p><strong>B-day:</strong> {{current.birthday}}</p>
+        <p><strong>Catch-phrase:</strong> <q>{{current.catchphrase}}</q></p>
+        <p><strong>Hobby:</strong> {{current.hobby}}</p>
       </div>
       <div class="image">
-        <img :src="current.image" decoding="async" />
+        <img :src="require('../../images/'+current.key)" width="250" height="250"/>
       </div>
       <div class="firstOptions">
       <div class="price">
@@ -25,7 +25,7 @@
       <div class="secondOptions">
 
         <div class="price">
-          <button @click="addToCart(current)" class="auto">Invite to village</button>
+          <button @click="addToIsland(current)" class="auto">Invite to village</button>
         </div>
         <div class="price">
           <button @click="randomVillager" class="auto">Surprise Villager</button>
@@ -66,8 +66,13 @@ export default {
     async villager() {
       this.current = this.villagerData[0];
     },
-    addToCart(product) {
-      this.$root.$data.cart.push(product);
+    addToIsland(person) {
+      for(let i = 0; i < this.$root.$data.cart.length; i++) {
+        if(this.$root.$data.cart[i].name === person.name) {
+          return;
+        }
+      }
+      this.$root.$data.cart.push(person);
     },
     nextVillager() {
       if (this.current.id != this.villagerData.length) {

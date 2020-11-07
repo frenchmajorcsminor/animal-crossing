@@ -19,8 +19,12 @@
   width: inherit;
 }
 .about {
-  width: 80%;
+  max-width: 750px;
   margin: auto;
   align-content: center;
+}
+p {
+  font-family: 'Calibri Light', 'Calibri', sans-serif;
+  font-size: 18px;
 }
 </style>

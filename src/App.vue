@@ -20,8 +20,9 @@
     </div>
   </div>
   <router-view />
-  <p class="footer"> <a href="https://github.com/frenchmajorcsminor/animal-crossing" target="_blank">
-  My Github Repo
+  <br>
+  <p class="footer">Dallin Christensen & Jonathan Eaton    |   <a href="https://github.com/frenchmajorcsminor/animal-crossing" target="_blank">
+  Github Repo
   </a>
   </p>
 </div>
@@ -79,7 +80,7 @@ body {
 
 #side img {
   border-radius: 25px;
-  width: 150px;
+  height: 100px;
 }
 
 .footer {
@@ -91,8 +92,7 @@ body {
 .menu-item {
   display: flex;
   flex-direction: column;
-  height: 100px;
-  margin: 10px;
+  padding: 10px;
 }
 
 .menu-item p {
